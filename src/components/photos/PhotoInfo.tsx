@@ -3,7 +3,7 @@ import heartSolidIcon from '../../heart-solid.svg';
 
 import styles from './PhotoInfo.module.css';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
-import { deletePhoto, photosCache, selectedPhotoId, toggleFavorited, unselectPhoto } from '../../features/photo-info/photosSlice';
+import { deletePhoto, photosCache, selectedPhotoId, toggleFavorite, unselectPhoto } from '../../features/photo-info/photosSlice';
 import { formatDate, sizeConverter } from '../../utils/utils';
 import PhotoModel from '../../photo';
 
@@ -50,7 +50,7 @@ export function PhotoInfo() {
             width: 0,
             height: 0
         },
-        sizeInBytes: "",
+        sizeInBytes: 0,
         sharedWith: [],
         favorited: false
     }));
@@ -84,7 +84,7 @@ export function PhotoInfo() {
                 <figcaption>
                     <span className={styles.title}>{photo.filename}</span>
                     <span className={styles.size}>{sizeConverter(photo.sizeInBytes)}</span>
-                    <button  className={styles.btnFavorite} onClick={() => dispatch(toggleFavorited(photo.id))}>
+                    <button  className={styles.btnFavorite} onClick={() => dispatch(toggleFavorite(photo.id))}>
                         <img src={photo.favorited ? heartSolidIcon : heartIcon} alt="Favorite" />
                     </button>
                 </figcaption>

@@ -1,9 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { getPhotos } from "../../api/client";
 import { RootState } from "../../app/store";
+import PhotoModel from "../../photo";
 
 export interface PhotosState {
-    data: any[];
+    data: PhotoModel[];
     status: 'idle' | 'pending' | 'failed',
     error: string,
     selectedId: string,
@@ -44,7 +45,7 @@ export const photosSlice = createSlice({
 
         },
 
-        toggleFavorited: (state, id: PayloadAction<string>) => {
+        toggleFavorite: (state, id: PayloadAction<string>) => {
             
             Object.keys(state.data).forEach((item: any) => {
                 if (state.data[item].id === id.payload) {
@@ -77,7 +78,7 @@ export const photosSlice = createSlice({
     }
 });
 
-export const { setSelectedId, unselectPhoto, deletePhoto, toggleFavorited } = photosSlice.actions;
+export const { setSelectedId, unselectPhoto, deletePhoto, toggleFavorite } = photosSlice.actions;
 export const selectedPhotoId = (state: RootState) => state.photos.selectedId;
 export const hasSelection = (state: RootState) => state.photos.hasSelected;
 export const photosCache = (state: RootState) => state.photos.data;

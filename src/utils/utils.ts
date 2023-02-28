@@ -1,11 +1,10 @@
 
-export const sizeConverter = (bytes: string): string => {
+export const sizeConverter = (bytes: number): string => {
     const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
-    let b = parseFloat(bytes);
-    if (b === 0) return 'n/a';
-    const i = Math.min(Math.floor(Math.log(b) / Math.log(1024)), sizes.length - 1);
-    if (i === 0) return `${b} ${sizes[i]}`;
-    return `${(b / (1024 ** i)).toFixed(1)} ${sizes[i]}`;
+    if (bytes === 0) return 'n/a';
+    const i = Math.min(Math.floor(Math.log(bytes) / Math.log(1024)), sizes.length - 1);
+    if (i === 0) return `${bytes} ${sizes[i]}`;
+    return `${(bytes / (1024 ** i)).toFixed(1)} ${sizes[i]}`;
 }
 
 /*

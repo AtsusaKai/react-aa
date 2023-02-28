@@ -14,7 +14,7 @@ export default interface PhotoModel {
     updatedAt: string;
     dimensions: Size;
     resolution: Size;
-    sizeInBytes: string;
+    sizeInBytes: number;
     sharedWith: any[];
     favorited: boolean
 }
