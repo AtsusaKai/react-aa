@@ -1,56 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 import './App.css';
 
+import { PhotoInfo } from './components/photos/PhotoInfo';
+import { Layout } from './components/layout/Layout';
+import { RecentlyAddedPage } from './pages/RecentlyAdded';
+import { FavoritesPage } from './pages/Favorites';
+import { useDispatch } from 'react-redux';
+import { getPhotos } from './api/client';
+import { ErrorNotFoundPage } from './components/layout/ErrorNotFound';
+
 function App() {
+  const dispatch = useDispatch<any>();
+
+  useEffect(() => {
+    // Fetch photos
+    dispatch(getPhotos())        
+  }, [dispatch]);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+    <div className="App-xxl">
+      <Router>
+        <Layout>          
+          <Routes>
+            <Route path="/" element={<RecentlyAddedPage />}  />
+            <Route path="/favorites" element={<FavoritesPage />} />
+            <Route path="*" element={<ErrorNotFoundPage />} />
+          </Routes>        
+        </Layout>
+      </Router>
+      <PhotoInfo />
     </div>
   );
 }

@@ -1,0 +1,265 @@
+.photoInfo {
+  background-color: #ffffff;
+  border-left: 1px solid #f8f9fa;
+  display: none;
+  padding: 3%;
+  border-left: 1px solid #e4e9f1;
+  border-right: 1px solid #e4e9f1;
+  box-shadow: inset 1px 0 #f8f9fa;
+  /* transform: translate(100%, 0); */
+  /* transition: 0.3s ease-out; */
+  
+  
+}
+
+.unselected {
+    animation: 0.3s ease-in infoeaseout;
+}
+
+.selected {
+    display: block;
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    padding: 10% 5%;
+    /* transform: translate(0, 0); */
+    left: 0;
+    top: 0;
+    /* transition: 0.3s ease-in; */
+    animation: 0.3s ease-in infoeasein;
+}
+
+@keyframes infoeasein {
+    from {
+        transform: translate(100%, 0);
+    }
+
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes infoeaseout {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(100%, 0);
+    }
+}
+
+.closeInfo {
+    background: transparent;
+    border: none;
+    line-height: 30px;
+    position: absolute;
+    top: 2%;
+    right: 5%;
+    font-weight: 600;;
+    cursor: pointer;
+    display: block;
+}
+
+.closeInfo:hover {
+    color: #2013de;
+}
+
+.photoInfo figure {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.photoCover {
+    background-color: #f7fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  aspect-ratio: auto 1 / 0.75;
+  border-radius: 12px;
+}
+
+.photoInfo figure img,
+.vertical img {
+  width: 100%;
+  max-width: 100%;
+}
+
+.horizontal img {
+    height: 100%;
+    max-height: 100%;
+}
+
+.photoInfo figure figcaption {
+  padding-top: 1rem;
+  padding-right: 14%;
+  position: relative;
+}
+
+.title {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.1em;
+  word-wrap: break-word;
+  padding-top: 0.5rem;
+}
+
+.size {
+  color: #3a4e6b;
+  font-size: 1rem;
+}
+
+.btnFavorite {
+  background: transparent;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  display: block;
+  top: 1.6rem;
+  right: 1px;
+  border: none;
+  cursor: pointer;
+}
+
+.photoInfo h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid #dce3eb;
+}
+
+.details {
+  padding: 4% 0;
+}
+
+.description {
+  padding: 4% 0;
+}
+
+.description h4 {
+  border: none;
+}
+
+.description p {
+  color: #3a4e6b;
+  padding: 4px 0;
+}
+
+.infoItem {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid #dce3eb;
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions {
+  padding: 4% 0;
+}
+
+.actions button {
+  font-size: 1rem;
+  width: 100%;
+  height: 45px;
+  display: block;
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #d0d9e3;
+  border-radius: 10px;
+  color: #000000;
+}
+
+.actions button:hover {
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #db1f48;
+}
+
+.heading {
+  color: #3a4e6b;
+}
+
+.content {
+  color: #000000;
+}
+
+.title {
+  font-size: 1.3rem;
+}
+
+.size {
+  font-size: 1rem;
+}
+
+@media (min-width: 576px) {
+    
+}
+@media (min-width: 768px) {
+  .photoInfo {
+    width: 33%;
+    display: block;
+    position: relative;
+    transform: none;
+    transition: none;
+    padding: 3%;
+  }
+
+  .closeInfo {
+    display: none;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .size {
+    font-size: 0.9rem;
+  }
+
+  .photoInfo h4 {
+    font-size: 1.2rem;
+  }
+
+  .infoItem {
+    display: block;
+    font-size: 0.9rem;
+    padding: 0.9rem 0;
+  }
+
+  .heading {
+    display: block;
+  }
+}
+
+@media (min-width: 992px) {
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .size {
+    font-size: 1rem;
+  }
+
+  .photoInfo h4 {
+    font-size: 1.3rem;
+  }
+
+  .infoItem {
+    display: flex;
+    font-size: 1rem;
+    padding: 1.15rem 0;
+  }
+
+  .heading {
+    display: inline;
+  }
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 1600px) {
+}

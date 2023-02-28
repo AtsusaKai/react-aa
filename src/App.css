@@ -1,39 +1,74 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
-}
-
-.App-header {
-  min-height: 100vh;
+.App,
+.App-fluid,
+.App-xxl,
+.App-xl,
+.App-lg,
+.App-md,
+.App-sm {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-right: auto;
+  margin-left: auto;
+  align-items: stretch;
+  min-height: 100%;
 }
 
-.App-link {
-  color: rgb(112, 76, 182);
+.mobile-info-open {
+  overflow: hidden;
+  max-height: calc(1080px - 20%);
 }
 
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
+@media (min-width: 576px) {
+  .App-sm,
+  .App {
+    max-width: 540px;
   }
-  50% {
-    transform: translateY(10px);
+
+  
+}
+@media (min-width: 768px) {
+  .App-md,
+  .App-sm,
+  .App {
+    max-width: 720px;
   }
-  100% {
-    transform: translateY(0px);
+
+  .mobile-info-open {
+    overflow: auto;
+    max-height: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .App-lg,
+  .App-md,
+  .App-sm,
+  .App {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .App-xl,
+  .App-lg,
+  .App-md,
+  .App-sm,
+  .App {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .App-xxl,
+  .App-xl,
+  .App-lg,
+  .App-md,
+  .App-sm,
+  .App {
+    max-width: 1500px;
   }
 }
