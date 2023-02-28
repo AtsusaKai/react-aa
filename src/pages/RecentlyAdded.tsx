@@ -8,7 +8,7 @@ export function RecentlyAddedPage(props: any) {
     const data = useAppSelector(photosCache);
 
     let sorted = [...data];
-    console.log(sorted);
+    
     sorted.sort((a: any, b: any) => Date.parse(b.createdAt) - Date.parse(a.createdAt));
 
     return (
