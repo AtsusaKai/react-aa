@@ -6,12 +6,10 @@
   border-left: 1px solid #e4e9f1;
   border-right: 1px solid #e4e9f1;
   box-shadow: inset 1px 0 #f8f9fa;
-  /* transform: translate(100%, 0); */
-  /* transition: 0.3s ease-out; */
 }
 
 .unselected {
-  animation: 0.3s ease-in infoeaseout;
+  animation: 0.2s ease-in infoeaseout;
 }
 
 .selected {
@@ -20,11 +18,9 @@
   width: 100%;
   margin: 0;
   padding: 10% 5%;
-  /* transform: translate(0, 0); */
   left: 0;
   top: 0;
-  /* transition: 0.3s ease-in; */
-  animation: 0.3s ease-in infoeasein;
+  animation: 0.2s ease-in infoeasein;
 }
 
 @keyframes infoeasein {

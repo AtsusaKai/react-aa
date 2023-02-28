@@ -1,10 +1,14 @@
-# Getting Started with Create React App
+# React Sample for AA
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
+This repo is deployed in AWS Amplify.\
+Open at [https://develop.dxldno3uw7l2y.amplifyapp.com/](https://develop.dxldno3uw7l2y.amplifyapp.com/) to view.
 
-## Available Scripts
+## App Details
 
-In the project directory, you can run:
+Created with `react-redux` with `typescript`. See `package.json` for more details.
+
+Redux + TypeScript template\
+`npx create-react-app my-app --template redux-typescript`
 
 ### `npm start`
 
@@ -13,6 +17,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
+
+### `npm run dev`
+
+Same as `npm start` but with specified `port`.
 
 ### `npm test`
 

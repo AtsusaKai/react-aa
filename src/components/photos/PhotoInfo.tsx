@@ -5,6 +5,7 @@ import styles from './PhotoInfo.module.css';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { deletePhoto, photosCache, selectedPhotoId, toggleFavorited, unselectPhoto } from '../../features/photo-info/photosSlice';
 import { formatDate, sizeConverter } from '../../utils/utils';
+import PhotoModel from '../../photo';
 
 export function PhotoInfo() {
 
@@ -33,9 +34,28 @@ export function PhotoInfo() {
     const selectedId = useAppSelector(selectedPhotoId);
     
     let result = data.filter((item: any) => item.id === selectedId);
-    const photo = result.length ? result[0] : null;
+    const photo: PhotoModel =  (result.length ? result[0] : ({
+        id: "",
+        url: "",
+        filename: "",
+        description: "",
+        uploadedBy: "",
+        createdAt: "",
+        updatedAt: "",
+        dimensions: {
+            width: 0,
+            height: 0
+        },
+        resolution: {
+            width: 0,
+            height: 0
+        },
+        sizeInBytes: "",
+        sharedWith: [],
+        favorited: false
+    }));
 
-    let hasSelected: boolean = photo !== null;
+    let hasSelected: boolean = result.length > 0;
 
 
     if (!hasSelected) {
@@ -52,7 +72,7 @@ export function PhotoInfo() {
         openMobileInfo();
     }
 
-    const isVertical: boolean = photo.dimensions.width < photo.dimensions.height; 
+    const isVertical: boolean = photo.dimensions.width < photo!.dimensions.height; 
     
     return (
         <section className={`${styles.photoInfo} ${hasSelected ? styles.selected : styles.unselected}`}>
