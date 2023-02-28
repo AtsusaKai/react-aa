@@ -117,7 +117,7 @@ export function PhotoInfo() {
                 <p>{photo.description ? photo.description : <em>(No description)</em>}</p>
             </div>
             <div className={styles.actions}>
-                <button onClick={() => dispatch(deletePhoto(photo.id))}>Delete</button>
+                <button onClick={() => { dispatch(deletePhoto(photo.id)); clearSelection(); }}>Delete</button>
             </div>
         </section>
     );
