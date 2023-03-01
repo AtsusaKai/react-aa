@@ -101,7 +101,7 @@ export function PhotoInfo() {
                 <p>--</p>
             </div>
             <div className={styles.actions}>
-                <button disabled>Delete</button>
+                <button disabled={true}>Delete</button>
             </div>
             </section>
         );
