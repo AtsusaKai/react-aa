@@ -63,9 +63,46 @@ export function PhotoInfo() {
             <section className={styles.photoInfo}>
                 <figure>
                     <div className={styles.photoCover}>                        
-                        <p><em>No selection</em></p>
+                        <p><em>Select a photo to view.</em></p>
                     </div>
+                    <figcaption>
+                        <span className={styles.title}>--</span>
+                        <span className={styles.size}>--</span>
+                        <button  className={styles.btnFavorite} disabled>
+                            <img src={heartIcon} alt="Favorite" />
+                        </button>
+                    </figcaption>
                 </figure>
+                <div className={styles.details}>
+                <h4>Information</h4>
+                <div className={styles.infoItem}>
+                    <span className={styles.heading}>Uploaded by</span>
+                    <span className={styles.content}>--</span>
+                </div>
+                <div className={styles.infoItem}>
+                    <span className={styles.heading}>Created</span>
+                    <span className={styles.content}>--</span>
+                </div>
+                <div className={styles.infoItem}>
+                    <span className={styles.heading}>Last modified</span>
+                    <span className={styles.content}>--</span>
+                </div>
+                <div className={styles.infoItem}>
+                    <span className={styles.heading}>Dimensions</span>
+                    <span className={styles.content}>--</span>
+                </div>
+                <div className={styles.infoItem}>
+                    <span className={styles.heading}>Resolution</span>
+                    <span className={styles.content}>--</span>
+                </div>
+            </div>
+            <div className={styles.description}>
+                <h4>Description</h4>
+                <p>--</p>
+            </div>
+            <div className={styles.actions}>
+                <button disabled>Delete</button>
+            </div>
             </section>
         );
     } else {
