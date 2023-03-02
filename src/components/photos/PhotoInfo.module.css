@@ -45,6 +45,7 @@
 
 .closeInfo {
   background: transparent;
+  font-size: 1rem;
   border: none;
   line-height: 30px;
   position: absolute;
@@ -53,6 +54,7 @@
   font-weight: 600;
   cursor: pointer;
   display: block;
+  padding-right: 0.8rem;
 }
 
 .closeInfo:hover {
@@ -64,25 +66,8 @@
   border-radius: 12px;
 }
 
-.photoCover {
-  background-color: #f7fafc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  aspect-ratio: auto 1 / 0.75;
-  border-radius: 12px;
-}
-
-.photoInfo figure img,
-.vertical img {
-  width: 100%;
-  max-width: 100%;
-}
-
-.horizontal img {
-  height: 100%;
-  max-height: 100%;
+.information {
+    display: block;
 }
 
 .photoInfo figure figcaption {
@@ -91,7 +76,7 @@
   position: relative;
 }
 
-.title {
+.photoInfo figure figcaption > span:first-child {
   display: block;
   font-size: 1rem;
   font-weight: bold;
@@ -100,21 +85,9 @@
   padding-top: 0.5rem;
 }
 
-.size {
+.photoInfo figure figcaption > span:nth-child(2) {
   color: #3a4e6b;
   font-size: 1rem;
-}
-
-.btnFavorite {
-  background: transparent;
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  display: block;
-  top: 1.6rem;
-  right: 1px;
-  border: none;
-  cursor: pointer;
 }
 
 .photoInfo h4 {
@@ -191,11 +164,11 @@
   color: #000000;
 }
 
-.title {
+.photoInfo figure figcaption > span:first-child {
   font-size: 1.3rem;
 }
 
-.size {
+.photoInfo figure figcaption > span:nth-child(2) {
   font-size: 1rem;
 }
 
@@ -215,11 +188,11 @@
     display: none;
   }
 
-  .title {
+  .photoInfo figure figcaption > span:first-child {
     font-size: 1.1rem;
   }
 
-  .size {
+  .photoInfo figure figcaption > span:nth-child(2) {
     font-size: 0.9rem;
   }
 
@@ -239,11 +212,11 @@
 }
 
 @media (min-width: 992px) {
-  .title {
+    .photoInfo figure figcaption > span:first-child {
     font-size: 1.3rem;
   }
 
-  .size {
+  .photoInfo figure figcaption > span:nth-child(2) {
     font-size: 1rem;
   }
 

@@ -1,14 +1,16 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { getPhotos } from "../../api/client";
 import { RootState } from "../../app/store";
+import { ModelDefaults } from "../../factory";
 import PhotoModel from "../../photo";
 
 export interface PhotosState {
     data: PhotoModel[];
-    status: 'idle' | 'pending' | 'failed',
-    error: string,
-    selectedId: string,
-    hasSelected: boolean
+    status: 'idle' | 'pending' | 'failed';
+    error: string;
+    selectedId: string;
+    selectedPhoto: PhotoModel | null;
+    hasSelected: boolean;
 }
 
 const initialState: PhotosState = {
@@ -16,6 +18,7 @@ const initialState: PhotosState = {
     status: 'idle',
     error: '',
     selectedId: '',
+    selectedPhoto: ModelDefaults.photo,
     hasSelected: false
 };
 
@@ -28,8 +31,15 @@ export const photosSlice = createSlice({
             state.hasSelected = true;
         },
 
+        selectedPhoto: (state, photo: PayloadAction<PhotoModel>) => {
+            state.selectedId = photo.payload.id;
+            state.selectedPhoto = photo.payload;
+            state.hasSelected = true;
+        },
+
         unselectPhoto: (state) => {
             state.selectedId = '';
+            state.selectedPhoto = null;
             state.hasSelected = false;
         },
 
@@ -78,7 +88,7 @@ export const photosSlice = createSlice({
     }
 });
 
-export const { setSelectedId, unselectPhoto, deletePhoto, toggleFavorite } = photosSlice.actions;
+export const { setSelectedId, selectedPhoto, unselectPhoto, deletePhoto, toggleFavorite } = photosSlice.actions;
 export const selectedPhotoId = (state: RootState) => state.photos.selectedId;
 export const hasSelection = (state: RootState) => state.photos.hasSelected;
 export const photosCache = (state: RootState) => state.photos.data;

@@ -20,7 +20,8 @@ figure {
   flex-basis: auto;
 }
 
-.image-cover {
+.imgCover {
+  background-color: #f7fafc;
   width: auto;
   aspect-ratio: auto 1 / 0.75;
   overflow: hidden;
@@ -30,19 +31,19 @@ figure {
   border-radius: 12px;
 }
 
-figure:hover .image-cover img {
+figure:not(.noEffects):hover .imgCover img {
   animation: 0.5s ease-in-out imageanim;
 }
 
-figure:hover .image-cover,
-.selected .image-cover {
+figure:not(.noEffects):hover .imgCover,
+.selected:not(.noEffects) .imgCover {
   box-shadow: 0 0 0 2px #2013dd;
   cursor: pointer;
   position: relative;
 }
 
-figure:hover .image-cover::after,
-.selected .image-cover::after {
+figure:not(.noEffects):hover .imgCover::after,
+.selected:not(.noEffects) .imgCover::after {
   content: " ";
   position: absolute;
   width: 100%;
@@ -75,6 +76,19 @@ figure img,
   color: #3a4e6b;
   font-size: 1rem;
 }
+
+.btnFavorite {
+    background: transparent;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    display: block;
+    top: 1.6rem;
+    right: 1px;
+    border: none;
+    cursor: pointer;
+  }
+  
 
 @media (min-width: 576px) {
 }

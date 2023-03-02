@@ -1,4 +1,6 @@
+
 import { PhotoItem } from './PhotoItem';
+
 import styles from './PhotosList.module.css';
 
 export function PhotosList(props: any) {
@@ -15,7 +17,13 @@ export function PhotosList(props: any) {
 
     return (
         <section className={styles.photoList}>
-            {props.items.map((item: any, i: number) => <PhotoItem key={i} data={item} />)}
+        {
+            props.items.map((item: any, i: number) => 
+            <PhotoItem 
+                key={i} 
+                data={item} 
+            />)
+        }
         </section>
     );
 }
